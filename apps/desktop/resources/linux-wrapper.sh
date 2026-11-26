@@ -52,11 +52,7 @@ echo "Display mode: $DISPLAY_MODE"
 case "$DISPLAY_MODE" in
   X11) PARAMS="--enable-features=UseOzonePlatform --ozone-platform=x11" ;;
   WAYLAND) PARAMS="--enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland" ;;
-  # A bug in Electron 39 (which now enables Wayland by default) causes a crash on
-  # systems using Wayland with hardware acceleration. Platform decided to
-  # configure Electron to use X11 (with an opt-out) until the upstream bug is
-  # fixed. The follow-up task is https://bitwarden.atlassian.net/browse/PM-31080.
-  AUTO) PARAMS="--enable-features=UseOzonePlatform --ozone-platform=x11" ;;
+  AUTO) PARAMS="--enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland" ;;
   *)
     echo "Unknown DISPLAY_MODE '$DISPLAY_MODE', falling back to X11" >&2
     PARAMS="--enable-features=UseOzonePlatform --ozone-platform=x11"

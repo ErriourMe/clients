@@ -479,7 +479,7 @@ export class WindowMain {
       minHeight: 500,
       x: this.windowStates[mainWindowSizeKey].x,
       y: this.windowStates[mainWindowSizeKey].y,
-      title: app.name,
+      title: "ErriourWarden",
       icon: this.windowIcon(),
       titleBarStyle: isMac() ? "hiddenInset" : undefined,
       show: false,
